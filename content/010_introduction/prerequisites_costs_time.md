@@ -9,7 +9,7 @@ description: "What You Need To Get Started, Cost Estimates, Time Estimates, Name
 
 ## Who is This Page for?
 
-Thie page is primarily for self-paced learners and instructors for custom instructor led sessions. If you are attending a workshop co-hosted by AWS and GitLab, to understand what course sections will be covered, please see [In-Person AWS Workshops Syllabus and Audience]({{< relref "./in_person_aws_workshops_syllabus.md" >}})
+Thie page is primarily for self-paced learners and instructors for custom instructor led sessions. If you are attending a workshop co-hosted by AWS and GitLab, to understand what course sections will be covered, please see [In-Person AWS Workshops Syllabus and Audience]({{< relref "./workshop_syllabus.md" >}})
 
 ## Target Audience
 
@@ -43,31 +43,14 @@ Based on us-east-1
 
 | Item                                                | Estimated Cost          | Fixed or <br />Varaible | Reduce or Eliminate                                    |
 | --------------------------------------------------- | ----------------------- | ---------------------- | ------------------------------------------------------ |
-| K8s Node Instances (2 x t3.medium spot)             | $0.03/hr (0.014/hr x 2) | Variable               | Cost = $0 by Scaling EKS Nodes to Zero                       |
-| Bastion Host (1 x t2.micro spot)                    | $0.0035/hr          | Variable               | Cost = $0 by Scaling EKS Nodes to Zero                       |
+| K8s Node Instances (2 x t3.medium spot)             | $0.03/hr (0.014/hr x 2) | Variable               | Cost = $0 by Scaling EKS Nodes ASG to Zero               |
+| Bastion Host (1 x t4g.micro ARM spot)              | $0.0016/hr | Variable               | Cost = $0 by Scaling Bastion ASG to Zero             |
 | EKS Control Plane                                   | $0.10/hr ($73/Mo)       | Fixed                  | Cannot be turned off, only destroying elimintates cost |
 | ELB for Ingress Controller (Auto DevOps Requirement) | 0.025/hr ($18/Mo)       | Fixed                  | Cannot be turned off, only destroying elimintates cost |
 
 - Total Fixed Costs Whether Scaled to 0 or not: 0.35/hr ($25/wk, $101/mo)
-- Variable Costs While Turned on (for two t3.medium spot instances + t2.micro spot bastion): $0.0835/hr
+- Variable Costs While Turned on (for two t3.medium spot instances + t4g.micro ARM spot bastion): $0.0616/hr
 - The EKS Quick Start and Ingress controller make teardown and setup relatively easy if avoiding the fixed costs between periods of usage is necessary.
-
-## Values to Substitute Throughout Exercises
-
-**Note:** The following values are used in the example and will usually be different in your project - be careful to keep track of what your values are to substitute them consistently throughout. If you are an instructor, provide the list of what the values should be to the class from the prep steps you have completed.
-
-| Description                                       | Substitution Value                                           | Actual Value In Your Case |
-| ------------------------------------------------- | ------------------------------------------------------------ | ------------------------- |
-| **<u>Within AWS</u>**                             |                                                              |                           |
-| AWS EKS Quick Start Config set name               | spot-t2-medium-v120-paramset                                 |                           |
-| AWS EKS Quick Start cluster name                  | spot2azuseast2                                               |                           |
-| AWS region                                        | us-east-2                                                    |                           |
-| **<u>Within GitLab</u>**                          |                                                              |                           |
-| Top Level Group (Can be a GitLab.com Namespace)   | Classgroup                                                   |                           |
-| Cluster management group and project path         | classgroup/cluster-management                                |                           |
-| Personal group                                    | yourpersonalgroup (subgroup of classgroup)                   |                           |
-| agent path segment (which is also the agent name) | spot2az-agent1<br />**Note:** does not have to match EKS name like it does here |                           |
-| Cluster Auto DevOps domain with SSL               | <mark>\<the Load Balancer IP\></mark>.nip.io                 |                           |
 
 ### A Production Pattern That is Training Ready
 

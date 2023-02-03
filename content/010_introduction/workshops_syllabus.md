@@ -1,14 +1,14 @@
 ---
-title: "In-Person AWS Workshops Syllabus and Audience"
+title: "AWS Workshops Syllabus and Audience"
 weight: 01
 chapter: true
 draft: false
-description: "What sections are performed during In-Person workshops hosted at AWS locations."
+description: "What sections are performed during workshops hosted at AWS locations."
 ---
 
-# In-Person AWS Workshops Syllabus and Audience
+# AWS Workshops Syllabus and Audience
 
-GitLab and AWS will be hosting this workshop live at some AWS locations. This information pertains to those specific deliveries. If you are an instructor for one of these deliveries, be sure to read [Instructor-Led Notes]({{< relref "../090_appendices/instructor_led_notes.md" >}}).
+This information pertains to AWS Workshop specific deliveries. If you are an instructor for one of these deliveries, be sure to read [Instructor-Led Notes]({{< relref "../090_appendices/instructor_led_notes.md" >}}).
 
 ### Audience
 
@@ -23,7 +23,7 @@ GitLab and AWS will be hosting this workshop live at some AWS locations. This in
 
 ### Syllabus
 
-For In-Person AWS Workshops the following lab sections will be performed by participants:
+For AWS Workshops the following lab sections will be performed by participants:
 
 1. [Labs Section 4. GitLab GitOps via the GitLab Agent for Kubernetes (Overview)]({{< relref "../040_gitlab_gitops_via_agent" >}})
 

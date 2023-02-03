@@ -62,6 +62,8 @@ Resources:
         NodeInstanceType3: t3.large
         OnDemandPercentage: 0
         OnDemandBastionPercentage: 0
+        BastionInstanceType: t4g.nano
+        BastionOS: Amazon-Linux2-HVM-ARM
   EKSCluster:
     DependsOn: EKSSetAdvancedParameters
     Type: 'AWS::CloudFormation::Stack'
